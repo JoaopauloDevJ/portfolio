@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import { theme } from './Theme/dark'
 
 const EstiloGlobal = createGlobalStyle`
   * {
@@ -10,6 +11,8 @@ const EstiloGlobal = createGlobalStyle`
 
   body {
     padding-top:80px;
+    padding-bottom: 80px;
+    background-color: ${(props) => (props.theme as theme).corDeFundo};
 
 
     @media (max-width: 768px) {
@@ -32,9 +35,5 @@ export const Container = styled.div`
   @media (max-width: 768px) {
     max-width: 80%;
     display: block;
-  }
-
-  img {
-    max-width: 100%;
   }
 `

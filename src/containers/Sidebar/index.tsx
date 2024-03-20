@@ -1,9 +1,25 @@
+import Avatar from '../../components/Avatar'
+import Paragrafo from '../../components/Paragrafo'
 import Title from '../../components/Title'
+import { Descricao, BotaoTema, SideBarProfile } from './style'
 
-const Sidebar = () => (
+type Props = {
+  trocaTema: () => void
+}
+
+const Sidebar = (props: Props) => (
   <aside>
-    <img src="https://github.com/JoaopauloDevJ.png" />
-    <Title fontSize={20}>João Paulo</Title>
+    <SideBarProfile>
+      <Avatar />
+      <Title fontSize={20}>João Paulo</Title>
+      <Paragrafo fontSize={16} tipo="secundario">
+        JoaopauloDevJ
+      </Paragrafo>
+      <Descricao tipo="principal" fontSize={12}>
+        Full Stack Java Jr.
+      </Descricao>
+      <BotaoTema onClick={props.trocaTema}>Trocar Tema</BotaoTema>
+    </SideBarProfile>
   </aside>
 )
 
